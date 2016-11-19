@@ -1,0 +1,34 @@
+{% extends 'galery/base.html' %}
+
+{% block title_main %}{{photo.title}}{% endblock title_main %}
+
+{% block body_block %}
+  	{% if photo %}
+	    <ul>
+			<img src ="{{photo.image.url}}" height= 500 width=700> </br>
+			{% if photo.image %}
+			</br>
+
+			<table id="datatable" class="table table-hover">
+					  <tbody>
+						  <tr>
+							  <th>Title</th>
+							  <td>{{ photo.title }}</td>
+						  </tr>
+						  
+						  <tr>
+							  <td><b>Category</b></td>
+							  <td>{{ photo.category }}</td>
+						  </tr>
+						  
+						  
+					  </tbody>
+				  </table>
+
+			{% endif %}
+		</li>
+	    </ul>
+		{% else %}
+		The spesific photo {{photo_title}} doesn't exist
+		{% endif %}
+{% endblock %}
